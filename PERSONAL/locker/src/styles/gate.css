@@ -1,0 +1,51 @@
+.gate {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(320px, 460px);
+  gap: 2rem;
+  align-items: center;
+  padding: clamp(1.5rem, 4vw, 4rem);
+}
+.gate-brand { display: grid; gap: 0.9rem; max-width: 38rem; }
+.wordmark, .side-brand strong, .page-head h1, .gate-brand h1 {
+  font-family: var(--serif);
+  font-weight: 560;
+  letter-spacing: -0.03em;
+}
+.gate-brand h1 { font-size: clamp(4.5rem, 8vw, 7rem); line-height: 0.85; }
+.lede { max-width: 36rem; color: var(--muted); font-size: 1.12rem; line-height: 1.5; }
+.lock-mark {
+  width: 3.2rem;
+  height: 3.2rem;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.lock-mark svg { width: 1.5rem; height: 1.5rem; }
+.gate-panel {
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 1.3rem;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 1rem;
+}
+.recovery-code {
+  font-family: var(--mono);
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  padding: 0.9rem;
+  border-radius: 14px;
+  background: var(--bg);
+  border: 1px dashed var(--line);
+  word-break: break-word;
+}
+.facts { display: grid; gap: 0.35rem; color: var(--muted); padding: 0; margin: 0.4rem 0 0; list-style: none; }
+.facts li::before { content: "– "; color: var(--accent); }
+@media (max-width: 860px) {
+  .gate { grid-template-columns: 1fr; align-items: start; }
+  .gate-brand h1 { font-size: 4.2rem; }
+}
